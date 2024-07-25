@@ -4,12 +4,8 @@ import './../styles/App.css';
 import {useState,useEffect} from "react";
 const App = () => {
  const [data, setData] = useState(null);
-  // State to store loading status
   const [loading, setLoading] = useState(true);
-  // State to store any potential errors
   const [error, setError] = useState(null);
-
-  // Function to fetch data from the API
   const fetchData = async () => {
     try {
       const response = await fetch('https://dummyjson.com/products');
@@ -22,12 +18,10 @@ const App = () => {
     }
   };
 
-  // Use useEffect to call fetchData when component mounts
   useEffect(() => {
     fetchData();
   }, []);
 
-  // Render the component
   return (
     <div>
       {loading ? (
