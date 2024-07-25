@@ -10,11 +10,11 @@ const App = () => {
     try {
       const response = await fetch('https://dummyjson.com/products');
       const result = await response.json();
-      setData(result); // Update state with fetched data
+      setData(result);
     } catch (err) {
-      setError(err.message); // Update state with error message
+      setError(err.message); 
     } finally {
-      setLoading(false); // Update state to indicate loading is done
+      setLoading(false); 
     }
   };
 
